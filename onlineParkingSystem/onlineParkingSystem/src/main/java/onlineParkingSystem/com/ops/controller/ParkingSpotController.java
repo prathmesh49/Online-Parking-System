@@ -24,7 +24,7 @@ public class ParkingSpotController {
         return ResponseEntity.ok(parkingSpotService.getParkingSpotById(id));
     }
 
-                                                                                                                                                                                                           @PostMapping("/")
+    @PostMapping("/")
     public ResponseEntity<?> saveParkingSpots(@RequestBody ParkingSpot parkingSpot) {
         parkingSpotService.updateParkingSpot(parkingSpot);
         return ResponseEntity.ok("updated");
