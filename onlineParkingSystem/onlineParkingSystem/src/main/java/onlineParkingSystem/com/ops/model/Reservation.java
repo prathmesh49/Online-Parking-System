@@ -20,5 +20,5 @@ public class Reservation {
     private Date startTime;
     private Date endTime;
 
-    // Constructors, getters, setters, and other methods
+
 }
