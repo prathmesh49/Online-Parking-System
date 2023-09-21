@@ -5,16 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
+
+@Document(collection = "reservations")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "park")
-public class ParkingSpot {
+public class Reservation {
     @Id
     private String id;
-    private String location;
-    private int capacity;
-    private double pricePerHour;
-    private boolean available;
+    private String userId;
+    private String parkingSpaceId;
+    private Date startTime;
+    private Date endTime;
 
+    // Constructors, getters, setters, and other methods
 }
