@@ -25,7 +25,6 @@ public class Orders {
     private double total_price;
 
     @OneToMany(mappedBy = "order")
-
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @ManyToMany
