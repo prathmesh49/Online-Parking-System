@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class User {
     private String email;
     private String first_name;
     private String last_name;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date_of_birth;
     private String address;
     private String phone_number;

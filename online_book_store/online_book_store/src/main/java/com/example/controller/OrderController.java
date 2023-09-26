@@ -13,13 +13,14 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/place")
-    public void placeOrder(@RequestBody Orders order) {
+    public ResponseEntity<String> placeOrder(@RequestBody Orders order) {
         orderService.placeOrder(order);
+        return ResponseEntity.ok("Order Placed!");
     }
 
     @GetMapping("/{orderId}")
-    public Orders getOrderById(@PathVariable Integer orderId) {
-        return orderService.getOrderById(orderId);
+    public ResponseEntity<Orders> getOrderById(@PathVariable Integer orderId) {
+        return ResponseEntity.ok(orderService.getOrderById(orderId));
     }
 
     @DeleteMapping("/cancel/{orderId}")
