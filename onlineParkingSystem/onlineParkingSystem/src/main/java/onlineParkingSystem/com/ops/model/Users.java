@@ -1,13 +1,14 @@
 package onlineParkingSystem.com.ops.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 @Document(collection = "users")
-@Data
+@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
 public class Users {
     @Id
