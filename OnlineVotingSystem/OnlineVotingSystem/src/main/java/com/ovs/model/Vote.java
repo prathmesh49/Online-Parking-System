@@ -1,10 +1,13 @@
 package com.ovs.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -16,7 +19,7 @@ public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vote_id")
-    private int voteId;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "election_id")
@@ -29,6 +32,7 @@ public class Vote {
     @ManyToOne
     @JoinColumn(name = "candidate_id")
     private Candidate candidate;
-
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private LocalDateTime dateTime;
 }
 

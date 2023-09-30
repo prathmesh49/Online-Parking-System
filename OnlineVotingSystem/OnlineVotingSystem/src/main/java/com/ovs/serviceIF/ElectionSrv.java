@@ -14,6 +14,8 @@ public interface ElectionSrv {
     Election getElectionById(int electionId);
 
     List<Election> getAllElections();
+
     List<Election> getActiveElections();
-    Election getActiveElectionDetails();
+
+    Election getActiveElectionDetails(int electionId);
 }

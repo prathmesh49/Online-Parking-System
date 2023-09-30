@@ -102,14 +102,26 @@ public class BallotController {
             return ResponseEntity.ok("Vote cast successfully");
 //        } catch (BadCredentialsException e) {
 //            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized access.");
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException | IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         } catch (Exception e) {
             // Handle other exceptions that may occur during vote casting
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to cast the vote.");
         }
+    }
+
+    // Example: Get All Active Elections
+    @GetMapping("/active-elections")
+    public ResponseEntity<?> getActiveElections() {
+        List<Election> activeElections = electionService.getActiveElections();
+        return ResponseEntity.ok(activeElections);
+    }
+
+    // Example: Get Details of an Active Election
+    @GetMapping("/active-elections/{id}")
+    public ResponseEntity<?> getActiveElectionDetails(@PathVariable("id") int electionId) {
+        Election election = electionService.getActiveElectionDetails(electionId);
+        return ResponseEntity.ok(election);
     }
 
 

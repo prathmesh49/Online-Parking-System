@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    private int id;
     private String username;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String password;

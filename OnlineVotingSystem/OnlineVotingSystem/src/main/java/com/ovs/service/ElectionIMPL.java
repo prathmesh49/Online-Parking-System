@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ElectionIMPL implements ElectionSrv {
@@ -39,14 +40,14 @@ public class ElectionIMPL implements ElectionSrv {
     public List<Election> getAllElections() {
         return electionRepository.findAll();
     }
-
     @Override
     public List<Election> getActiveElections() {
         return electionRepository.findByIsActiveTrue();
     }
 
     @Override
-    public Election getActiveElectionDetails() {
-        return null;
+    public Election getActiveElectionDetails(int electionId) {
+        Optional<Election> election = electionRepository.findByIdAndIsActiveTrue(electionId);
+        return election.orElse(null); // Handle the case where the election is not found
     }
 }

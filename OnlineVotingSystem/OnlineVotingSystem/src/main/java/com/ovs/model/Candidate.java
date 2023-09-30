@@ -17,7 +17,7 @@ public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "candidate_id")
-    private int candidateId;
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "election_id")

@@ -20,7 +20,7 @@ public class Election {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "election_id")
-    private int electionId;
+    private int id;
 
     @Column(name = "title", length = 255)
     @NotNull
