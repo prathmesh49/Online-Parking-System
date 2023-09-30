@@ -13,7 +13,7 @@ Hello there! I'm Prathmesh Rajendra Kurane, and I recently had the opportunity t
 
 ## Key Achievements and Learnings
 During my internship, I had the opportunity to achieve the following:
-- Successfully implemented [mention a specific project/task you worked on].
+- Successfully implemented Book Store, Voting System, Parking System.
 - Collaborated with experienced developers, learning best practices in Java development.
 - Enhanced my problem-solving skills by tackling complex challenges in the Fintech domain.
 
